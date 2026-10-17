@@ -1,0 +1,33 @@
+{
+  "name": "lazada-stock-bot",
+  "version": "1.0.0",
+  "description": "iPhone Duo stock monitor for Lazada Thailand (Apple Flagship Store) with Telegram alerts",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsx src/scripts/check-once.ts",
+    "notify:test": "tsx src/scripts/test-notification.ts",
+    "notify:status": "tsx src/scripts/test-notification.ts --status",
+    "browser:install": "playwright install chromium"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "playwright": "^1.49.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT"
+}

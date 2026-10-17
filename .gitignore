@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.browser-profile/
+data/
+*.log
+.DS_Store

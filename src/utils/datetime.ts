@@ -1,0 +1,29 @@
+const TZ = process.env.TZ ?? 'Asia/Bangkok';
+
+/// 17/10/2026 23:30:15
+export const formatThaiDateTime = (date: Date): string =>
+  new Intl.DateTimeFormat('en-GB', {
+    timeZone: TZ,
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  })
+    .format(date)
+    .replace(',', '');
+
+/// 23:30
+export const formatClock = (date: Date): string =>
+  new Intl.DateTimeFormat('en-GB', {
+    timeZone: TZ,
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(date);
+
+/// ฿79,900
+export const formatBaht = (value: number | null): string =>
+  value === null ? '' : `฿${value.toLocaleString('en-US', { maximumFractionDigits: 2 })}`;
